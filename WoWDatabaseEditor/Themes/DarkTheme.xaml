@@ -27,8 +27,21 @@
   </Style>
 
   <Style TargetType="Button">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type Button}">
+          <Border x:Name="Border" Padding="0,0,0,0" BorderBrush="#FF515159" BorderThickness="1">
+            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+          </Border>
+          <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+              <Setter TargetName="Border" Property="Background" Value="#FF3F3F46" />
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
     <Setter Property="Panel.Background" Value="#FF3F3F46" />
-    <Setter Property="Border.BorderBrush" Value="#FF515159" />
   </Style>
 
   <Style TargetType="TextBox">
@@ -326,7 +339,7 @@
               Background="{TemplateBinding Background}">
               <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" RecognizesAccessKey="True" />
             </Border>
-            <Thumb Name="testowy"
+            <Thumb Name="resizethumb"
                    HorizontalAlignment="Right"
                    Margin="0,0,0,0"
                    Visibility="Hidden"
@@ -336,7 +349,7 @@
           <ControlTemplate.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
               <Setter TargetName="border" Property="BorderBrush" Value="Black" />
-              <Setter TargetName="testowy" Property="Visibility" Value="Visible" />
+              <Setter TargetName="resizethumb" Property="Visibility" Value="Visible" />
               <Setter Property="Cursor" Value="SizeWE"/>
             </Trigger>
           </ControlTemplate.Triggers>
@@ -347,6 +360,26 @@
     <Setter Property="Foreground" Value="#303030"/>
   </Style>
 
+  <Style x:Key="ListViewItemStyle" TargetType="{x:Type ListViewItem}">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type ListViewItem}">
+          <Border x:Name="Border" Padding="0,1,0,1" Margin="0,-0.5,0,-0.5" SnapsToDevicePixels="true" Background="#303030" BorderThickness="0">
+            <GridViewRowPresenter VerticalAlignment="{TemplateBinding VerticalContentAlignment}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"/>
+          </Border>
+          <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+              <Setter TargetName="Border" Property="BorderThickness" Value="2" />
+              <Setter TargetName="Border" Property="BorderBrush" Value="Gray" />
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  
+  
   <!-- SmartScripts -->
   <SolidColorBrush x:Key="SmartScripts.Background" Color="#303030"/>
   <SolidColorBrush x:Key="SmartScripts.Source.Foreground" Color="#00B1CC"/>
