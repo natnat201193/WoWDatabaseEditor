@@ -47,6 +47,7 @@
       </Setter.Value>
     </Setter>
     <Setter Property="Panel.Background" Value="#FF3F3F46" />
+    <Setter Property="MinWidth" Value="50"/>
   </Style>
 
   <Style TargetType="TextBox">

@@ -19,7 +19,7 @@
                       extensions:GridViewColumns.DisplayMemberMember="DisplayMember"
                       extensions:GridViewColumns.ColumnsSource="{Binding Columns}"
                       extensions:GridViewColumns.ColumnHeadStyleName="GridColumnHeaderStyle"
-                          ColumnHeaderContainerStyle="{DynamicResource GridViewColumnHeader}"/>
+                      ColumnHeaderContainerStyle="{DynamicResource GridViewColumnHeader}"/>
             </ListView.View>
         </ListView>
         <Button Grid.Row="2" HorizontalAlignment="Right" VerticalContentAlignment="Stretch" Content="Ok" Width="63" Click="Button_Click"></Button>
