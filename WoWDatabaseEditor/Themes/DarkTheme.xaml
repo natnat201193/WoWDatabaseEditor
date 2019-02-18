@@ -383,8 +383,6 @@
       </Setter.Value>
     </Setter>
   </Style>
-
-  
   
   <!-- SmartScripts -->
   <SolidColorBrush x:Key="SmartScripts.Background" Color="#303030"/>
