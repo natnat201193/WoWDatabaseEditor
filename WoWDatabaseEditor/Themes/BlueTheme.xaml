@@ -7,6 +7,16 @@
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="Controls/Merged.xaml" />
     </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="GridViewColumnHeader" TargetType="{x:Type GridViewColumnHeader}">
+        
+    </Style>
+
+    <!-- Style used by code call in GridViewColumns.cs line 329 -->
+    <Style x:Key="GridColumnHeaderStyle" TargetType="{x:Type GridViewColumnHeader}">
+        
+    </Style>
+
     <!-- SmartScripts -->
     <SolidColorBrush x:Key="SmartScripts.Background" Color="#F5F6FC"/>
     <SolidColorBrush x:Key="SmartScripts.Source.Foreground" Color="#267171"/>
