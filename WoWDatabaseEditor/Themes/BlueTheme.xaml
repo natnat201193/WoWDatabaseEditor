@@ -8,6 +8,8 @@
         <ResourceDictionary Source="Controls/Merged.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
+    <SolidColorBrush x:Key="WindowBackgroundBrush" Color="#F2F2F2" />
+
     <Style x:Key="GridViewColumnHeader" TargetType="{x:Type GridViewColumnHeader}">
         
     </Style>
