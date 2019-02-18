@@ -17,5 +17,9 @@ namespace WDE.ThemeChanger
     [AutoRegister, SingleInstance]
     public class ThemeChangerModule : ModuleBase
     {
+        public override void OnInitialized(IContainerProvider containerProvider)
+        {
+            containerProvider.Resolve<ThemeSettingsProvider>().UpdateTheme();
+        }
     }
 }

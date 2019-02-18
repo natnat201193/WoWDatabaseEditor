@@ -11,5 +11,6 @@ namespace WDE.ThemeChanger.Providers
     {
         ThemeSettings GetSettings();
         void UpdateSettings(string name);
+        void UpdateTheme();
     }
 }

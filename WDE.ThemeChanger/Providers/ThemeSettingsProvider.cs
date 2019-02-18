@@ -7,6 +7,7 @@ using WDE.ThemeChanger.Data;
 using Newtonsoft.Json;
 using System.IO;
 using WDE.Module.Attributes;
+using System.Windows;
 
 namespace WDE.ThemeChanger.Providers
 {
@@ -45,6 +46,21 @@ namespace WDE.ThemeChanger.Providers
             using (StreamWriter file = File.CreateText(@"theme.json"))
             {
                 ser.Serialize(file, settings);
+            }
+        }
+
+        public void UpdateTheme()
+        {
+            string curentTheme = Application.Current.Resources.MergedDictionaries[1].Source.ToString();
+            string compareStr = "/" + settings.Name + ".xaml";
+
+            if (!curentTheme.Contains(compareStr))
+            {
+                Application.Current.Resources.MergedDictionaries.Clear();
+                Uri uriOne = new Uri("pack://application:,,,/Xceed.Wpf.AvalonDock.Themes.VS2013;component/" + settings.Name + ".xaml");
+                Uri uriTwo = new Uri("Themes/" + settings.Name + ".xaml", UriKind.RelativeOrAbsolute);
+                Application.Current.Resources.MergedDictionaries.Add(new ResourceDictionary() { Source = uriOne });
+                Application.Current.Resources.MergedDictionaries.Add(new ResourceDictionary() { Source = uriTwo });
             }
         }
     }
