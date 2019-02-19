@@ -73,6 +73,7 @@
     <Compile Include="Providers\ThemeSettingsProvider.cs" />
     <Compile Include="ThemeChangerConfiguration.cs" />
     <Compile Include="ThemeChangerModule.cs" />
+    <Compile Include="ThemeManager.cs" />
     <Compile Include="ViewModels\ThemeConfigViewModel.cs" />
     <Compile Include="Views\ThemeConfigView.xaml.cs">
       <DependentUpon>ThemeConfigView.xaml</DependentUpon>
@@ -105,7 +106,7 @@
       <Version>2.0.4</Version>
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json">
-      <Version>11.0.2</Version>
+      <Version>11.0.1</Version>
     </PackageReference>
     <PackageReference Include="Prism.Wpf">
       <Version>7.1.0.172-pre</Version>

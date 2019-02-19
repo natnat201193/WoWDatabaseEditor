@@ -6,14 +6,13 @@ using System.Threading.Tasks;
 
 namespace WDE.ThemeChanger.Data
 {
-    public class ThemeSettings
+    public struct ThemeSettings
     {
-        public string Name { get; set; }
-        public List<string> themes { get; set; }
+        public string Name { get; }
 
-        public ThemeSettings()
+        public ThemeSettings(string name)
         {
-            themes = new List<string>();
+            Name = name;
         }
     }
 }

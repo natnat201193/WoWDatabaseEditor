@@ -6,35 +6,38 @@ using System.Threading.Tasks;
 using WDE.ThemeChanger.Providers;
 using Prism.Mvvm;
 using System.Windows;
+using WDE.Common.Managers;
 
 namespace WDE.ThemeChanger.ViewModels
 {
     public class ThemeConfigViewModel : BindableBase
     {
-        public Action SaveAction { get; set; }
         private readonly IThemeSettingsProvider settings;
+        private readonly IThemeManager themeManager;
+        public Action SaveAction { get; set; }
 
-        private string _name;
-        private List<string> _themes;
+        private Theme _name;
+        private List<Theme> _themes;
 
-        public string Name
+        public Theme Name
         {
             get { return _name; }
-            set { SetProperty(ref _name, value); }
+            set { SetProperty(ref _name, value); themeManager.SetTheme(value); }
         }
 
-        public List<string> Themes
+        public List<Theme> Themes
         {
             get { return _themes; }
             set { SetProperty(ref _themes, value); }
         }
 
-        public ThemeConfigViewModel(IThemeSettingsProvider s)
+        public ThemeConfigViewModel(IThemeSettingsProvider s, IThemeManager themeManager)
         {
+            this.themeManager = themeManager;
             SaveAction = Save;
 
-            _name = s.GetSettings().Name;
-            _themes = s.GetSettings().themes;
+            _name = themeManager.CurrentTheme;
+            _themes = themeManager.Themes.ToList();
 
             settings = s;
         }
@@ -42,21 +45,6 @@ namespace WDE.ThemeChanger.ViewModels
         private void Save()
         {
             settings.UpdateSettings(Name);
-        }
-
-        public void UpdateTheme()
-        {
-            string curentTheme = Application.Current.Resources.MergedDictionaries[1].Source.ToString();
-            string compareStr = "/" + _name + ".xaml";
-
-            if (!curentTheme.Contains(compareStr))
-            {
-                Application.Current.Resources.MergedDictionaries.Clear();
-                Uri uriOne = new Uri("pack://application:,,,/Xceed.Wpf.AvalonDock.Themes.VS2013;component/" + _name + ".xaml");
-                Uri uriTwo = new Uri("Themes/" + _name + ".xaml", UriKind.RelativeOrAbsolute);
-                Application.Current.Resources.MergedDictionaries.Add(new ResourceDictionary() { Source = uriOne });
-                Application.Current.Resources.MergedDictionaries.Add(new ResourceDictionary() { Source = uriTwo });
-            }
         }
     }
 }

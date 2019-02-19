@@ -11,6 +11,7 @@ using WDE.Common.Events;
 using Prism.Events;
 using WDE.ThemeChanger.Providers;
 using WDE.ThemeChanger.ViewModels;
+using WDE.Common.Managers;
 
 namespace WDE.ThemeChanger
 {
@@ -19,7 +20,7 @@ namespace WDE.ThemeChanger
     {
         public override void OnInitialized(IContainerProvider containerProvider)
         {
-            containerProvider.Resolve<ThemeSettingsProvider>().UpdateTheme();
+            containerProvider.Resolve<IThemeManager>();
         }
     }
 }

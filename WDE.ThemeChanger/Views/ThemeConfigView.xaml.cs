@@ -14,11 +14,5 @@ namespace WDE.ThemeChanger.Views
         {
             InitializeComponent();
         }
-
-        private void ComboBox_OnItemSelect(object sender, SelectionChangedEventArgs e)
-        {
-            ThemeConfigViewModel model = DataContext as ThemeConfigViewModel;
-            model.UpdateTheme();
-        }
     }
 }

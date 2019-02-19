@@ -9,6 +9,7 @@ using System.Windows.Controls;
 using WDE.ThemeChanger.Views;
 using WDE.ThemeChanger.ViewModels;
 using WDE.ThemeChanger.Providers;
+using WDE.Common.Managers;
 
 namespace WDE.ThemeChanger
 {
@@ -16,16 +17,18 @@ namespace WDE.ThemeChanger
     public class ThemeChangerConfiguration : IConfigurable
     {
         private readonly IThemeSettingsProvider themeSettings;
+        private readonly IThemeManager themeManager;
 
-        public ThemeChangerConfiguration(IThemeSettingsProvider settings)
+        public ThemeChangerConfiguration(IThemeSettingsProvider settings, IThemeManager themeManager)
         {
             themeSettings = settings;
+            this.themeManager = themeManager;
         }
 
         public KeyValuePair<ContentControl, Action> GetConfigurationView()
         {
             var view = new ThemeConfigView();
-            var viewModel = new ThemeConfigViewModel(themeSettings);
+            var viewModel = new ThemeConfigViewModel(themeSettings, themeManager);
             view.DataContext = viewModel;
             return new KeyValuePair<ContentControl, Action>(view, viewModel.SaveAction);
         }
