@@ -15,7 +15,8 @@
                 <Panel>
                     <Border Classes="Bg"/>
                     <Border Classes="Separator" />
-                    <DockPanel LastChildFill="True" Margin="78,7.5,7.5,7.5">
+                    <DockPanel LastChildFill="True">
+                        <controls1:WindowControlButtons DockPanel.Dock="Right"/>
                         <ContentPresenter Content="{TemplateBinding LeftContent}" DockPanel.Dock="Left"/>
                         <ContentPresenter Content="{TemplateBinding RightContent}" DockPanel.Dock="Right"/>
                         <ContentPresenter Content="{TemplateBinding Content}" HorizontalContentAlignment="Stretch" Margin="10,0"/>
@@ -23,6 +24,15 @@
                 </Panel>
             </ControlTemplate>
         </Setter>
+    </Style>
+    <Style Selector="controls1|ExtendedTitleBar /template/ DockPanel">
+        <Setter Property="Margin" Value="7.5,7.5,7.5,7.5" />
+    </Style>
+    <Style Selector="controls1|ExtendedTitleBar:macos /template/ DockPanel">
+        <Setter Property="Margin" Value="78,7.5,7.5,7.5" />
+    </Style>
+    <Style Selector="controls1|ExtendedTitleBar:macos /template/ controls1|WindowControlButtons">
+        <Setter Property="IsVisible" Value="False" />
     </Style>
     <Style Selector="controls1|ExtendedWindow:fullscreen controls1|ExtendedTitleBar /template/ DockPanel">
         <Setter Property="Margin" Value="7.5"/>
@@ -46,13 +56,13 @@
         <Setter Property="TransparencyLevelHint" Value="AcrylicBlur" />
         <Setter Property="ExtendClientAreaTitleBarHeightHint" Value="38" />
         <Setter Property="ExtendClientAreaToDecorationsHint" Value="True" />
-        <Setter Property="UseSystemChrome" Value="True" />
+        <Setter Property="Chrome" Value="MacOsChrome" />
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="Foreground" Value="{DynamicResource MainColorForeground}"/>
         <Setter Property="Template">
             <ControlTemplate>
                 <VisualLayerManager>
-                    <DockPanel LastChildFill="True">
+                    <DockPanel LastChildFill="True" Margin="{TemplateBinding OffScreenMargin}">
                         <controls1:ExtendedTitleBar DockPanel.Dock="Top"
                                                     LeftContent="{Binding ToolBar.LeftContent, RelativeSource={RelativeSource Mode=TemplatedParent}}"
                                                     RightContent="{Binding ToolBar.RightContent, RelativeSource={RelativeSource Mode=TemplatedParent}}">

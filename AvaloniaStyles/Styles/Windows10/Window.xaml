@@ -19,27 +19,34 @@
     <Style Selector="controls1|ExtendedWindow">
         <Setter Property="ExtendClientAreaTitleBarHeightHint" Value="24" />
         <Setter Property="ExtendClientAreaToDecorationsHint" Value="True" />
-        <Setter Property="UseSystemChrome" Value="False" />
+        <Setter Property="Chrome" Value="NoSystemChrome" />
         <Setter Property="Background" Value="{DynamicResource SystemControlBackgroundAltHighBrush}" />
         <Setter Property="Foreground" Value="{DynamicResource SystemControlForegroundBaseHighBrush}"/>
         <Setter Property="Template">
             <ControlTemplate>
                 <Border BorderThickness="1" BorderBrush="{DynamicResource AccentColorBackground}">
                     <VisualLayerManager>
-                        <DockPanel LastChildFill="True">
-                            <Panel Height="30" DockPanel.Dock="Top">
-                                <Border Background="{TemplateBinding Background}" IsHitTestVisible="False"/>
-                                <DockPanel Margin="6,0,0,0">
-                                    <Image Source="{TemplateBinding ManagedIcon}" DockPanel.Dock="Left" Width="24"/>
-                                    <NativeMenuBar DockPanel.Dock="Left" />
-                                    <controls1:WindowControlButtons DockPanel.Dock="Right"/>
-                                    <TextBlock 
-                                        IsHitTestVisible="False" 
-                                        HorizontalAlignment="Center"
-                                        VerticalAlignment="Center" 
-                                        Foreground="{DynamicResource TitleBarForeground}"
-                                        Text="{TemplateBinding Title}" />
-                                </DockPanel>
+                        <DockPanel LastChildFill="True" Margin="{TemplateBinding OffScreenMargin}">
+                            <Panel DockPanel.Dock="Top">
+                                <Border Background="{DynamicResource TitleBarBackground}" IsHitTestVisible="False"/>
+                                <StackPanel>
+                                    <DockPanel Margin="6,0,0,0" Height="30">
+                                        <Image Source="{TemplateBinding ManagedIcon}" DockPanel.Dock="Left" Width="24"/>
+                                        <NativeMenuBar DockPanel.Dock="Left" />
+                                        <controls1:WindowControlButtons DockPanel.Dock="Right"/>
+                                        <TextBlock 
+                                            IsHitTestVisible="False" 
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center" 
+                                            Foreground="{DynamicResource TitleBarForeground}"
+                                            Text="{TemplateBinding Title}" />
+                                    </DockPanel>
+                                    <StackPanel HorizontalAlignment="Left" DockPanel.Dock="Top" Orientation="Horizontal" Spacing="20">
+                                        <ContentPresenter Content="{Binding ToolBar.LeftContent, RelativeSource={RelativeSource Mode=TemplatedParent}}" />
+                                        <ContentPresenter Content="{Binding ToolBar.Content, RelativeSource={RelativeSource Mode=TemplatedParent}}" />
+                                        <ContentPresenter Content="{Binding ToolBar.RightContent, RelativeSource={RelativeSource Mode=TemplatedParent}}" />
+                                    </StackPanel>
+                                </StackPanel>
                             </Panel>
                             
                             <ContentPresenter Content="{TemplateBinding StatusBar}" DockPanel.Dock="Bottom" Name="StatusBar"/>
@@ -47,13 +54,13 @@
                             <Border Background="{TemplateBinding Background}" Padding="4">
                                 <Panel>
                                     <DockPanel LastChildFill="True" Background="{TemplateBinding Background}">
-                                        <StackPanel HorizontalAlignment="Left" DockPanel.Dock="Top" Orientation="Horizontal" Spacing="20">
-                                            <ContentPresenter Content="{Binding ToolBar.LeftContent, RelativeSource={RelativeSource Mode=TemplatedParent}}" />
-                                            <ContentPresenter Content="{Binding ToolBar.Content, RelativeSource={RelativeSource Mode=TemplatedParent}}" />
-                                            <ContentPresenter Content="{Binding ToolBar.RightContent, RelativeSource={RelativeSource Mode=TemplatedParent}}" />
-                                        </StackPanel>
                             
-                                        <Grid ColumnDefinitions="*,Auto,300" Name="ReversedSidebarGrid">
+                                        <Grid Name="ReversedSidebarGrid">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="6" MinWidth="6" />
+                                                <ColumnDefinition Width="300" MinWidth="300"/>
+                                            </Grid.ColumnDefinitions>
                                             <DockPanel ClipToBounds="True" LastChildFill="True">
                                                 <ContentPresenter DockPanel.Dock="Top" Name="Tabs" Content="{TemplateBinding TabStrip}" />
                                                 <ContentPresenter Content="{TemplateBinding Content}" 

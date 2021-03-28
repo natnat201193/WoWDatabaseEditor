@@ -1,0 +1,22 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Styles.Resources>
+        <SolidColorBrush Color="#D6DBE9" x:Key="TitleBarBackground" />
+        <!-- dark window background -->
+        <SolidColorBrush Color="#293955" x:Key="SystemControlBackgroundAltHighBrush" />
+        <SolidColorBrush Color="#48A6E0" x:Key="AccentColorBackground" />
+        
+        <SolidColorBrush Color="#007ACC" x:Key="StatusBarBackground" />
+        
+        <SolidColorBrush Color="#74747F" x:Key="ContentBorderBrush" />
+        <SolidColorBrush Color="#E8E8EE" x:Key="ContentBackground" />
+        
+        <SolidColorBrush Color="#292929" x:Key="SystemControlForegroundBaseHighBrush" />
+        
+        <SolidColorBrush Color="#3C3C3C" x:Key="TitleBarForeground" />
+    </Styles.Resources>
+    
+    <Style Selector="GridSplitter">
+        <Setter Property="Background" Value="{DynamicResource SystemControlBackgroundAltHighBrush}" />
+    </Style>
+</Styles>

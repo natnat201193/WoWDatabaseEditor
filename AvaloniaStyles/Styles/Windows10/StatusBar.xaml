@@ -3,7 +3,7 @@
     <Style Selector="controls|StatusBar">
         <Setter Property="Height" Value="20" />
         <Setter Property="BorderThickness" Value="0"/>
-        <Setter Property="Background" Value="{DynamicResource AccentColorBackground}"/> 
+        <Setter Property="Background" Value="{DynamicResource StatusBarBackground}"/> 
         <Setter Property="Template">
             <ControlTemplate>
                 <Panel>
