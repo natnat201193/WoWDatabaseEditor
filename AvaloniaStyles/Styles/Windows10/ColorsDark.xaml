@@ -3,6 +3,8 @@
     <Styles.Resources>
         <SolidColorBrush Color="#2D2D30" x:Key="TitleBarBackground" />
         <!-- dark window background -->
+        <SolidColorBrush Color="#2D2D30" x:Key="MainWindowBackgroundAccent" />
+        
         <SolidColorBrush Color="#2D2D30" x:Key="SystemControlBackgroundAltHighBrush" />
         <SolidColorBrush Color="#3579C6" x:Key="AccentColorBackground" />
         
@@ -10,10 +12,33 @@
         
         <SolidColorBrush Color="#3F3F45" x:Key="ContentBorderBrush" />
         <SolidColorBrush Color="#252526" x:Key="ContentBackground" />
+        <SolidColorBrush Color="#252526" x:Key="ThemeBackgroundBrush" />
+        <SolidColorBrush Color="#3F3F45" x:Key="ThemeBorderMidBrush" />
         
         <SolidColorBrush Color="#E1E1E1" x:Key="SystemControlForegroundBaseHighBrush" />
         
         <SolidColorBrush Color="#999999" x:Key="TitleBarForeground" />
+        
+        <!-- buttons -->
+        <CornerRadius x:Key="ControlCornerRadius">0</CornerRadius>
+        <Thickness x:Key="ListBoxItemPadding">7,5,7,7</Thickness>
+        <Thickness x:Key="ButtonPadding">8,5,8,6</Thickness>
+        <Thickness x:Key="ButtonBorderThemeThickness">0.5</Thickness>
+        <Thickness x:Key="ThemeBorderThickness">0.5</Thickness>
+        
+        <SolidColorBrush x:Key="ButtonBackground" Color="#555555" />
+        <SolidColorBrush x:Key="ButtonForeground" Color="#EDEDED" />
+        <SolidColorBrush x:Key="ButtonBorderBrush" Color="#212121" />
+
+        <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="#676767" />
+        <SolidColorBrush x:Key="ButtonBorderBrushPointerOver" Color="#212121" />
+        
+        <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="#454545" />
+        <SolidColorBrush x:Key="ButtonBorderBrushPressed" Color="#454545" />
+        
+        <SolidColorBrush x:Key="ButtonBackgroundDisabled" Color="#454545" />
+        <SolidColorBrush x:Key="ButtonBorderBrushDisabled" Color="#454545" />
+        <SolidColorBrush x:Key="ButtonForegroundDisabled" Color="DarkGray" />
     </Styles.Resources>
     
     <Style Selector="GridSplitter">

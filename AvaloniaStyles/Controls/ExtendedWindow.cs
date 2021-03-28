@@ -151,6 +151,10 @@ namespace AvaloniaStyles.Controls
                 grid2.ColumnDefinitions[1].MaxWidth = 0;
                 grid2.ColumnDefinitions[1].MinWidth = 0;
             }
+            if (SideBar == null && e.NameScope.Find("MainSplitter") is GridSplitter gridSplitter)
+            {
+                gridSplitter.MaxWidth = gridSplitter.MinWidth = gridSplitter.Width = 0;
+            }
         }
 
         private void ContentChanged(AvaloniaPropertyChangedEventArgs e, string pseudoclass)

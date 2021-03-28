@@ -66,6 +66,7 @@
       <AvaloniaResource Include="Styles\Catalina\Window.xaml" />
       <AvaloniaResource Include="Styles\Windows10Light.xaml" />
       <AvaloniaResource Include="Styles\Windows10\ColorsLight.xaml" />
+      <AvaloniaResource Include="Styles\Windows10\ListBox.xaml" />
       <AvaloniaResource Include="Styles\Windows10\NativeMenuBar.xaml" />
       <AvaloniaResource Include="Styles\Windows10\SideBar.xaml" />
       <AvaloniaResource Include="Styles\Windows10\StatusBar.xaml" />
@@ -91,5 +92,7 @@
       <AvaloniaResource Include="Styles\Windows10\ColorsDark.xaml" />
       <None Remove="Styles\Catalina\WindowControlButtons.xaml" />
       <AvaloniaResource Include="Styles\Catalina\WindowControlButtons.xaml" />
+      <None Remove="Styles\Windows10Dark.xaml" />
+      <AvaloniaResource Include="Styles\Windows10Dark.xaml" />
     </ItemGroup>
 </Project>
