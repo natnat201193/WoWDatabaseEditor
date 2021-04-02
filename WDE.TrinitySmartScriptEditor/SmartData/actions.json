@@ -3485,6 +3485,7 @@
         "name": "SMART_ACTION_META_COMMENT",
         "description": "",
         "name_readable": "Comment",
+        "comment_field": "Comment",
         "target_is_source": false,
         "implicit_source": "SMART_TARGET_NONE"
     }
