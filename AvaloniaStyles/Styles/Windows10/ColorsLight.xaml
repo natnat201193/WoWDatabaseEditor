@@ -22,6 +22,46 @@
         
         <SolidColorBrush Color="#3C3C3C" x:Key="TitleBarForeground" />
         
+        <!-- textbox -->
+        <SolidColorBrush Color="White" x:Key="TextControlBackground" />
+        <SolidColorBrush Color="#ABADB3" x:Key="TextControlBorderBrush" />
+        <SolidColorBrush Color="White" x:Key="TextControlBackgroundPointerOver" />
+        <SolidColorBrush Color="#7EB4EA" x:Key="TextControlBorderBrushPointerOver" />
+        <SolidColorBrush Color="White" x:Key="TextControlBackgroundFocused" />
+        <SolidColorBrush Color="#7EB4EA" x:Key="TextControlBorderBrushFocused" />
+        
+        <SolidColorBrush Color="#99C9EF" x:Key="TextControlSelectionHighlightColor" />
+        
+        <!-- combo box like button -->
+        <LinearGradientBrush x:Key="ComboBoxBackground" StartPoint="0%, 0%" EndPoint="0%,100%">
+            <GradientStops>
+                <GradientStop Color="#F0F0F0" Offset="0" />
+                <GradientStop Color="#E5E5E5" Offset="1"/>  
+            </GradientStops>
+        </LinearGradientBrush>
+        <SolidColorBrush x:Key="ComboBoxBorderBrush" Color="#ACACAC" />
+        <SolidColorBrush x:Key="ComboBoxForeground" Color="#000000" />
+        
+        <LinearGradientBrush x:Key="ComboBoxBackgroundPointerOver" StartPoint="0%, 0%" EndPoint="0%,100%">
+            <GradientStops>
+                <GradientStop Color="#ECF4FC" Offset="0" />
+                <GradientStop Color="#DDECFC" Offset="1"/>  
+            </GradientStops>
+        </LinearGradientBrush>
+        <SolidColorBrush x:Key="ComboBoxBorderBrushPointerOver" Color="#7EB4EA" />
+        
+        <LinearGradientBrush x:Key="ComboBoxBackgroundPressed" StartPoint="0%, 0%" EndPoint="0%,100%">
+            <GradientStops>
+                <GradientStop Color="#DAECFC" Offset="0" />
+                <GradientStop Color="#C4E0FC" Offset="1"/>  
+            </GradientStops>
+        </LinearGradientBrush>
+        <SolidColorBrush x:Key="ComboBoxBorderBrushPressed" Color="#569DE5" />
+        
+        <!-- checkbox -->
+        <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillUnchecked" Color="White" />
+        <SolidColorBrush x:Key="CheckBoxCheckBackgroundStrokeUnchecked" Color="#707070" />
+        
         <!-- buttons -->
         <CornerRadius x:Key="ControlCornerRadius">0</CornerRadius>
         <Thickness x:Key="ListBoxItemPadding">7,5,7,7</Thickness>

@@ -69,6 +69,14 @@
                             <ContentPresenter Content="{Binding ToolBar.Content, RelativeSource={RelativeSource Mode=TemplatedParent}}" />
                         </controls1:ExtendedTitleBar>
                         
+                        <NativeMenuBar DockPanel.Dock="Top">
+                            <NativeMenuBar.Styles>
+                                <Style Selector="Menu">
+                                    <Setter Property="Background" Value="{DynamicResource TitleBarBackground}" />
+                                </Style>
+                            </NativeMenuBar.Styles>
+                        </NativeMenuBar>
+                        
                         <ContentPresenter DockPanel.Dock="Top" Name="Tabs" Content="{TemplateBinding TabStrip}" />
 
                         <ContentPresenter Content="{TemplateBinding StatusBar}" DockPanel.Dock="Bottom" Name="StatusBar"/>
@@ -120,7 +128,8 @@
                                           Width="54" Height="54"
                                           Margin="0,0,15,0" />
                         <ContentPresenter DockPanel.Dock="Bottom" Content="{TemplateBinding Content}" Name="Buttons" HorizontalContentAlignment="Right"/>
-                        <TextBlock Text="{TemplateBinding Message}" TextWrapping="WrapWithOverflow" FontSize="14" />
+                        <TextBlock Text="{TemplateBinding Header}" TextWrapping="WrapWithOverflow" FontSize="16" DockPanel.Dock="Top" />
+                        <TextBlock Text="{TemplateBinding Message}" TextWrapping="WrapWithOverflow" FontSize="13" />
                     </DockPanel>
                 </Border>
             </ControlTemplate>
