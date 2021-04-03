@@ -13,6 +13,7 @@
         <StyleInclude Source="avares://AvaloniaStyles/Styles/Windows10/Button.axaml" />
         <StyleInclude Source="avares://AvaloniaStyles/Styles/Windows10/ListBox.xaml" />
         <StyleInclude Source="avares://AvaloniaStyles/Styles/Windows10/DataGrid.axaml" />
+        <StyleInclude Source="avares://AvaloniaStyles/Styles/Windows10/TextBox.axaml" />
         <Style>
                 <Style.Resources>
                         <system:Double x:Key="ControlContentThemeFontSize">12</system:Double>
